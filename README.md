@@ -8,17 +8,13 @@
 
 Årets leveranse publiseres på github på adressen [https://github.com/nvdb-vegdata/kostra](https://github.com/nvdb-vegdata/kostra). På github kan du lettvint laste ned data med den grønne knappen _"Code" -> "Download ZIP"_ , plassert oppe til høyre.
 
-Eller bruk [denne lenken](https://github.com/LtGlahn/kostrarapportering2025/archive/refs/heads/master.zip)
-
-![Nedlasting, hele arkivet](./bilder/lastnedrepos.png)
+Eller bruk [denne lenken](https://github.com/nvdb-vegdata/kostra/archive/refs/heads/master.zip)
 
 Nedlasting av enkeltrapporter er ørlite grann mer plundrete, og krever at du navigerer deg fram til riktig rapport, klikker på den og så kan du laste ned:
 
 * Gå til mappen [rapporter_2025](https://github.com/nvdb-vegdata/kostra/tree/main/rapporter_2025)
 * Klikk på en fil, for eksempel [Kostra 16 - Fylkesveg tunnel høyde under 4m.xlsx](https://github.com/nvdb-vegdata/kostra/blob/main/rapporter_2025/Kostra%2016%20-%20Fylkesveg%20tunnel%20h%C3%B8yde%20under%204m.xlsx)
-* Klikk på _Download_ - knappen
-
-![Nedlasting, enkelt fil](./bilder/lastnedfil.png)  
+* Klikk på _Download_ - knappen 
 
 ### Filstruktur
 
