@@ -44,7 +44,7 @@ Nedlasting av enkeltrapporter er ørlite grann mer plundrete, og krever at du na
 | Midtrekkverk på to og trefelts fylkesveger                                     | 20 | Kostra 20 - Fylkesveg to- og trefelt midtrekkverk.xlsx     |
 | Gang- og sykkelveger (statlig eller fylkeskommunalt ansvar) langs fylkesveg    | 21 | Kostra 21 - Fylkesveg gang- og sykkelveg.xlsx              |
 | Gang- og sykkelveger, alle vegkategorier                                       |    | Kostra 21 - EKSTRA alle gang- og sykkelveg.xlsx            |
-| Gang- og sykkelveg i byer/tettsteder >5000 innbyggere (~~SOSI~~ geojsonformat) | 22 | Kostra 22 - Fylkesveg gang- og sykkelveg.geojson           |
+| Gang- og sykkelveg i byer/tettsteder >5000 innbyggere (~~SOSI~~ geojsonformat) | 22 | Kostra 22 - Fylkesveg gang- og sykkelveg.zip               |
 | Forsterket midtoppmerking (rumlefelt), på fylkesveg                            | 23 | Kostra 23 - Fylkesveg med forsterket midtoppmerking.xlsx   |
 | Støyskjermer og voller langs fylkesvei                                         | 24 | Kostra 24 - Fylkesveg med støyskjerm og voll.xlsx          |
 | Kollektivfelt langs fylkesveg                                                  | 25 | Kostra 25 - Fylkesveg med kollektivfelt.xlsx               |
@@ -98,15 +98,19 @@ _Disse dataene finnes ikke i nasjonal vegdatbank, men i eget system for forvaltn
 
 ### Kostra 11 Fylkesveg uten fast dekke med ÅDT høyere enn 5000 kjøretøy per døgn
 
-Vi har ingen forekomster med fylkesveger uten fast dekke (dvs objekttypen _Vegdekke (241)_ med egenskapfilteret _Massetype = Grus_) som overlapper med objekttypen  _Trafikkmende (540)_ med egenskapen  _ÅDT, total_ større enn 5000 kjøretøy per døgn. (I NVDB vil du sagtens finne et par hundre meter med den metoden vi har brukt, men det er datafeil).
+Vi har ingen forekomster med fylkesveger uten fast dekke (dvs objekttypen _Vegdekke (241)_ med egenskapfilteret _Massetype = Grus_) som overlapper med objekttypen _Trafikkmende (540)_ med egenskapen _ÅDT, total_ større enn 5000 kjøretøy per døgn. (I NVDB vil du sagtens finne et par hundre meter med den metoden vi har brukt, men det er datafeil).
 
-### Kostra 12
+### Kostra 12 Fylkesveg i alt >5000 ÅDT
 
 Her teller vi objekttypen _Trafikkmengde (540)_ med egenskapverdien _ÅDT, total_ større enn 5000 kjøretøy per døgn langs fylkesveger.
 
-### Kostra 13 og 14 Tunneller på fylkesveg, antall og lengde
+### Kostra 13 Tunneller på fylkesveg, lengde
 
-Her teller vi antall og samlet lengde for tunneler på fylkesveg. Analysen er en sammenstilling av objekttypene _Tunnelløp (67)_ og _Tunnel (581)_. Hvis _tunnel_ - objektet har egenskapen _Lengde, offisiell_ så bruker vi denne for å regne ut lengdene. Hvis ikke henter vi lengden fra tunnelløpet, enten fra tunnelløpets egenskap _Lengde_ eller fra tunnelløpets utstrekning langs vegnettet.
+Her teller vi samlet lengde for tunneler på fylkesveg. Analysen er en sammenstilling av objekttypene _Tunnelløp (67)_ og _Tunnel (581)_. Hvis _tunnel_ - objektet har egenskapen _Lengde, offisiell_ så bruker vi denne for å regne ut lengdene. Hvis ikke henter vi lengden fra tunnelløpet, enten fra tunnelløpets egenskap _Lengde_ eller fra tunnelløpets utstrekning langs vegnettet.
+
+### Kostra 14 Tunneller på fylkesveg, antall
+
+Her teller vi antall tunneler på fylkesveg. Analysen ser på vegobjekttypen _Tunnel (581)_. 
 
 ### Kostra 15 Tunneller lengre enn 500 meter på fylkesveg
 
@@ -128,15 +132,9 @@ Her finner vi antall og lengde langs fylkesveg av objekttypen _Bru (60)_ som har
 
 Her finner vi antall og lengde langs fylkesveg av objekttypen _Bru (60)_ som har egenskap _Brukategori = Vegbru_ og overlapper med objekttypen _Høydebegrensning (591)_ med egenskapverdi _Skilta høyde_ lavere enn 4 meter.
 
-### Kostra 20 Mindtrekkverk på to og trefelts fylkesveger
+### Kostra 20 Midtrekkverk på to og trefelts fylkesveger
 
-Objekttypen _Rekkverk (5)_ med egenskapen _Bruksområde = Midtrekkverk_ eller _Midtdeler_  langs fylkesveger der vi har to eller tre kjørefelt. Det er littegrann komplisert å koble sammen antall kjørefelt fra vegnettet med data om midtrekkverk, men nå har vi laget gode, gjenbrukbare oppskrifter.
-
-Antall kjørefelt klassifiseres som en av _EttFelt, 2-3felt_ eller _mangefelt_, samt _ukjent_ for de veglenkene som mangler egenskapen _feltoversikt_. I rapporten angir vi først det som etterspørres: Lengde midtrekkverk og midtdeler på to- og trefeltsveg (fanen _"Midtrekkverk 2-3felt"_). I tillegg angir vi lengden av alle midtrekkverk og -delere i fanen _"Alle midtrekkverk"_.
-
-Den versjonen vi synes får best frem intensjonen bak spørsmålet er fanen _"Midtrekkverk per vegnummer"_, der lengden også er gruppert per vår kjørefelt-gruppering (kolonnen _"kjfelt"_), i tillegg til per vegnummer og fylke. Her får vi tydelig fram hvilke veger som har lengre, sammenhengende strekninger med midtrekkverk (for eksempel Fv44 i Rogaland), og hvilke som kun har rekkverk knyttet til kryss, busslommer etc (for eksempel Fv113 i Viken, med 5 meter).
-
-Videre er det en utfordring med _overlapp_: Det kan være satt opp mange rekkverk, for eksempel ett på hver side av en midtrabatt, eller mellom busslomme og hovedveg. Dette gir selvsagt "dobbelttelling" langs de delene av vegen der det finnes mer enn ett midtrekkverk eller midtdeler.
+Objekttypen _Rekkverk (5)_ med egenskapen _Bruksområde = Midtrekkverk_ eller _Midtdeler_  langs fylkesveger der vi har to eller tre kjørefelt. Her er analysen simplifisert fra tidligere leveranser. Nå gjør vi en overlappsspørring med objekttypen _Feltstrekning (616)_ med egenskapen _Type = 2-feltsveg envegskjørt, 2-feltsveg, Del av 2-feltsveg, 3-feltsveg envegskjørt, 3-feltsveg_ eller _Del av 3-feltsveg_.
 
 ### Kostra 21 gang og sykkelveg for fylkesveger
 
@@ -168,6 +166,4 @@ Vi ser at de eldre versjonene av Rapport nummer 25, _"Fylkesveg med kollektivfel
 
 ### Ekstrarapport motorveger
 
-Dette er en modifisering av datauttaket for motorveg og motortrafikkveg fylkesveger (rapport 02), men for alle veger. Underveis fant vi at det riktigste bildet er å ingnorere kryssdeler og ramper (fra før har vi filtrert ut _adskilte løp=MOT_ og sideanlegg). Bildet under viser fire ramper som da IKKE blir med i denne rapporten.
-
-![ramper motorveg](./bilder/motorveg-ramper.png)
+Dette er en modifisering av datauttaket for motorveg og motortrafikkveg fylkesveger (rapport 02), men for alle veger. Underveis fant vi at det riktigste bildet er å ingnorere kryssdeler og ramper (fra før har vi filtrert ut _adskilte løp=MOT_ og sideanlegg). 
