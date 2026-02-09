@@ -1,16 +1,12 @@
 
 # KOSTRA-leveranse 2025
 
-	Årets KOSTRA-rapport fra Nasjonal vegdatabank (NVDB) bruker samme metodikk som vi har brukt siden 2020, ref [fjorårets leveranse](https://github.com/LtGlahn/kostrarapportering2020).
-
-Tabellen "KOSTRA 01 - Vegnett hele landet" har et par faner med detaljert veglengde per vegkategori for hele landet, samt også per fylke og per kommune. Tabellen "EKSTRARAPPORT motorveger.xlsx" oppsummerer motorveger og motortrafikkveg.
-
-
+	Årets KOSTRA-rapport fra Nasjonal vegdatabank (NVDB) skal bruke samme metodikk som ble brukt for fjorårets leveranse, ref [fjorårets leveranse](https://github.com/LtGlahn/kostrarapportering2024). Implementasjon av nytt Les API for NVDB gjorde at store deler av koden måtte lages på nytt, som kan forårsake uforutsette forskjeller. 
 
 
 # Nedlasting
 
-Årets leveranse publiseres på github på adressen [https://github.com/LtGlahn/kostrarapportering2025](https://github.com/LtGlahn/kostrarapportering2025). På github kan du lettvint laste ned data med den grønne knappen _"Code" -> "Download ZIP"_ , plassert oppe til høyre.
+Årets leveranse publiseres på github på adressen [https://github.com/nvdb-vegdata/kostra](https://github.com/nvdb-vegdata/kostra). På github kan du lettvint laste ned data med den grønne knappen _"Code" -> "Download ZIP"_ , plassert oppe til høyre.
 
 Eller bruk [denne lenken](https://github.com/LtGlahn/kostrarapportering2025/archive/refs/heads/master.zip)
 
@@ -18,46 +14,45 @@ Eller bruk [denne lenken](https://github.com/LtGlahn/kostrarapportering2025/arch
 
 Nedlasting av enkeltrapporter er ørlite grann mer plundrete, og krever at du navigerer deg fram til riktig rapport, klikker på den og så kan du laste ned:
 
-* Gå til mappen [kostraleveranse2024](https://github.com/LtGlahn/kostrarapportering2024/tree/master/kostraleveranse2024)
-* Klikk på en fil, for eksempel [Kostra 16 - tunnel u 4m.xlsx](https://github.com/LtGlahn/kostrarapportering2024/blob/master/kostraleveranse2024/Kostra%2016%20-%20tunnell%20u%204m.xlsx)
+* Gå til mappen [rapporter_2025](https://github.com/nvdb-vegdata/kostra/tree/main/rapporter_2025)
+* Klikk på en fil, for eksempel [Kostra 16 - Fylkesveg tunnel høyde under 4m.xlsx](https://github.com/nvdb-vegdata/kostra/blob/main/rapporter_2025/Kostra%2016%20-%20Fylkesveg%20tunnel%20h%C3%B8yde%20under%204m.xlsx)
 * Klikk på _Download_ - knappen
 
 ![Nedlasting, enkelt fil](./bilder/lastnedfil.png)  
 
 ### Filstruktur
 
-Årets leveranse ligger i undermappen [`kostraleveranse2024`](https://github.com/LtGlahn/kostrarapportering2024/tree/main/kostraleveranse2024). Øvrige mapper inneholder kode og dokumentasjon.
+Årets leveranse ligger i undermappen [`rapporter_2025`](https://github.com/nvdb-vegdata/kostra/tree/main/rapporter_2025). Øvrige mapper inneholder kode og dokumentasjon.
 
 | Navn formell bestilling                                              |  Nummerering | Filnavn                                                    |
 |--------------------------------------------------------------------------------|----|------------------------------------------------------------|
 | Riks-, fylkes-, kommune-, privat- og skogsbilveg                               |  1 | Kostra 01 - Vegnett hele landet.xlsx                       |
-| 2025-kommuneindeling Riks-, fylkes-, kommune-, privat- og skogsbilveg          |  1 | Kostra 01 - 2025 kommuneinndeling Vegnett hele landet.xlsx |
-|                                                                                |  2 | Kostra 02 - Fylkesveg med motorveg og motortrafikkveg.xlsx |
-| Fylkesveg uten fast dekke                                                      |  3 | Kostra 03 - Fylkesveg uten fast dekke.XLSX                 |
-| Fylkesveg med 4 felt                                                           |  4 | Kostra 04 - Fylkesveg med 4 felt.XLSX                      |
+|                                                                                |  2 | Kostra 02 - Fylkesveg med motor- og motortrafikkveg.xlsx   |
+| Fylkesveg uten fast dekke                                                      |  3 | Kostra 03 - Fylkesveg uten fast dekke.xlsx                 |
+| Fylkesveg med 4 felt                                                           |  4 | Kostra 04 - Fylkesveg med 4 felt.xlsx                      |
 | Fylkesvei med tillatt aksellast <10 tonn                                       |  5 | Kostra 05 - Fylkesveg aksellast u 10t.xlsx                 |
 | Fylkesvei med begrensning på totalvekt <50 tonn                                |  6 | Kostra 06 - Fylkesveg totalvekt u 50t.xlsx                 |
-| Fylkesveg med fartsgrense 50 eller lavere                                      |  7 | Kostra 07 - Fylkesveg maks 50kmt.xlsx                      |
-| Fylkesvei med begrensning på kj.t.lengde <19,5m                                |  8 | Kostra 08 - maks lengde u 19m.xlsx                         |
+| Fylkesveg med fartsgrense 50 eller lavere                                      |  7 | Kostra 07 - Fylkesveg fartsgrense maks 50kmt.xlsx          |
+| Fylkesvei med begrensning på kj.t.lengde <19,5m                                |  8 | Kostra 08 - Fylkesveg maks vogntoglengde under 19.5m,.xlsx |
 | Underganger på fylkesveg med høydebegrensning lavere enn 4 m                   |  9 | Kostra 09 - Undergang lavere enn 4m.xlsx                   |
 | Fylkesveg med dårlig eller svært dårlig dekketilstand                          | 10 |  - _(leveres fra eget fagsystem dekkeforvaltning)_         |
-| Fylkesveg uten fast dekke >5000 ÅDT                                            | 11 | Kostra 11 - Fylkesveg uten fast dekke AADT over 5000.xlsx  |
-| Fylkesveg i alt >5000 ÅDT                                                      | 12 | Kostra 12 - Fylkesveg AADT over 5000.xlsx                  |
-| Tunneler på fylkesveg. Lengde                                                  | 13 | Kostra 13 og 14 - tunnell fylkesveg.xlsx                   |
-| Tunneler på fylkesveg. Antall                                                  | 14 |  Kostra 13 og 14 - tunnell fylkesveg.xlsx                  |
-| Tunneler på fylkesveg med lengde 500 m og over                                 | 15 | Kostra 15 - tunnell fylkesveg lengre enn 500m.xlsx         |
-| Tunneler på fylkesveg med høydebegrensning <4m                                 | 16 | Kostra 16 - tunnell u 4m.xlsx                              |
+| Fylkesveg uten fast dekke >5000 ÅDT                                            | 11 | Kostra 11 - Fylkesveg uten fast dekke ÅDT over 5000.xlsx   |
+| Fylkesveg i alt >5000 ÅDT                                                      | 12 | Kostra 12 - Fylkesveg ÅDT over 5000.xlsx                   |
+| Tunneler på fylkesveg. Lengde                                                  | 13 | Kostra 13 - Fylkesveg lengde tunnel.xlsx                   |
+| Tunneler på fylkesveg. Antall                                                  | 14 | Kostra 14 - Fylkesveg antall tunnel.xlsx                   |
+| Tunneler på fylkesveg med lengde 500 m og over                                 | 15 | Kostra 15 - Fylkesveg tunnel lengde enn 500m.xlsx          |
+| Tunneler på fylkesveg med høydebegrensning <4m                                 | 16 | Kostra 16 - Fylkesveg tunnel høyde under 4m.xlsx           |
 | Vegbruer på fylkesveg                                                          | 17 | Kostra 17 - Bruer fylkesveg.xlsx                           |
 | Bruer på fylkesvei med tillatt aksellast <10 tonn                              | 18 | Kostra 18 - Bruer under 10t.xlsx                           |
-| Bruer på fylkesvei med høydebegrensning <4m                                    | 19 | Kostra 19 - Bruer hoyde mindre enn 4m.xlsx                 |
-| Midtrekkverk på to og trefelts fylkesveger                                     | 20 | Kostra 20 - Midtrekkverk på to og trefelts Fv.xlsx         |
-| Gang- og sykkelveger (statlig eller fylkeskommunalt ansvar) langs fylkesveg    | 21 | Kostra 21 gang og sykkelveg.xlsx                           |
-| Gang- og sykkelveger, alle vegkategorier                                       |    | Kostra 21 EKSTRA ALLE gang og sykkelveg.xlsx               |
-| Gang- og sykkelveg i byer/tettsteder >5000 innbyggere (~~SOSI~~ geojsonformat) | 22 | Kostra 22 - sykkelveger_fylkesveg.zip                      |
+| Bruer på fylkesvei med høydebegrensning <4m                                    | 19 | Kostra 19 - Bruer høydebegrensning under 4m.xlsx           |
+| Midtrekkverk på to og trefelts fylkesveger                                     | 20 | Kostra 20 - Fylkesveg to- og trefelt midtrekkverk.xlsx     |
+| Gang- og sykkelveger (statlig eller fylkeskommunalt ansvar) langs fylkesveg    | 21 | Kostra 21 - Fylkesveg gang- og sykkelveg.xlsx              |
+| Gang- og sykkelveger, alle vegkategorier                                       |    | Kostra 21 - EKSTRA alle gang- og sykkelveg.xlsx            |
+| Gang- og sykkelveg i byer/tettsteder >5000 innbyggere (~~SOSI~~ geojsonformat) | 22 | Kostra 22 - Fylkesveg gang- og sykkelveg.geojson           |
 | Forsterket midtoppmerking (rumlefelt), på fylkesveg                            | 23 | Kostra 23 - Fylkesveg med forsterket midtoppmerking.xlsx   |
-| Støyskjermer og voller langs fylkesvei                                         | 24 | Kostra 24 - Fylkesveg med stoyskjerm og voll.xlsx          |
+| Støyskjermer og voller langs fylkesvei                                         | 24 | Kostra 24 - Fylkesveg med støyskjerm og voll.xlsx          |
 | Kollektivfelt langs fylkesveg                                                  | 25 | Kostra 25 - Fylkesveg med kollektivfelt.xlsx               |
-| Ekstrarapport motorveger (alle veger, ikke bare fylkesveg)                     |    | EKSTRARAPPORT motorveger.xlsx                              |
+| Ekstrarapport motorveger (alle veger, ikke bare fylkesveg)                     |    | Kostra 02 - EKSTRA alle motor- og motortrafikkveger.xlsx   |
 
 # Merknader til de enkelte rapportene
 
@@ -80,8 +75,6 @@ Her finner vi lengden av objekttypen _Vegdekke (241)_ langs fylkesveg med egensk
 ### Kostra 04 - Fylkesveg med 4 felt
 
 Her teller vi lengden av vegnett som har fire eller flere felt. Vi regner ikke med kjørefelt av typene sykkelfelt, fergeoppstillingsplass og ekstra felt ved bomstasjoner. Vi teller heller ikke med kryssdeler, sideanlegg og konnekteringslenker, og heller ikke _adskilte løp = Mot_.
-
-Denne rapporten er laget med applikasjonen ["NVDB rapporter for KOSTRA"](https://nvdb-kostra.atlas.vegvesen.no/ ) med [disse valgene](https://raw.githubusercontent.com/LtGlahn/kostrarapportering2021/master/bilder/lastned04-firefeltsfylkesveg.png)
 
 ### Kostra 05 Fylkesveg med maks aksellast under 10 tonn
 
@@ -175,7 +168,7 @@ Dette er telling av objekttypene _Skjerm (3)_ med  egenskapen _Bruksområde = St
 
 Her teller vi lengde av vegnettet for kjørende, slik som i rapporten Kostra 01 vegnett, men i denne rapporten teller vi vi kun med de strekningene der det finnes kollektivfelt.  
 
-Vi ser at de eldre versjonene av Rapport nummer 25, _"Fylkesveg med kollektivfelt"_, så er det telt to ganger veglengden der kollektivfelt finnes på begge sider av vegen. Vi er usikre på hva som foretrekkes, og oppgir derfor begge deler, henholdsvis  _"Lengde en retning (m)"_ hvor vi kun teller hvorvidt det finnes kollektivfelt på strekningen, likegyldig hvor mange, og kolonnen _"Lengde per kollektivfelt (m)"_, hvor vi teller dobbelt opp hvis det finnes kollektivfelt på begge sider av vegen (dvs for begge retninger).
+Vi ser at de eldre versjonene av Rapport nummer 25, _"Fylkesveg med kollektivfelt"_, så er det telt to ganger veglengden der kollektivfelt finnes på begge sider av vegen. I årets rapport vil lengden tilsvare _"Lengde per kollektivfelt"_. Altså strekninger der kollektivfelt finnes på begge sider vil telles to ganger i rapporten.
 
 ### Ekstrarapport motorveger
 
