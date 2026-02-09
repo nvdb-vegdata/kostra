@@ -1,7 +1,7 @@
 
 # KOSTRA-leveranse 2025
 
-	Årets KOSTRA-rapport fra Nasjonal vegdatabank (NVDB) skal bruke samme metodikk som ble brukt for fjorårets leveranse, ref [fjorårets leveranse](https://github.com/LtGlahn/kostrarapportering2024). Implementasjon av nytt Les API for NVDB gjorde at store deler av koden måtte lages på nytt, som kan forårsake uforutsette forskjeller. 
+Årets KOSTRA-rapport fra Nasjonal vegdatabank (NVDB) skal bruke samme metodikk som ble brukt for fjorårets leveranse, ref [fjorårets leveranse](https://github.com/LtGlahn/kostrarapportering2024). Implementasjon av nytt Les API for NVDB gjorde at store deler av koden måtte lages på nytt, som kan forårsake uforutsette forskjeller. 
 
 
 # Nedlasting
