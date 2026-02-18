@@ -8,6 +8,7 @@ def main():
     f['vegsystemreferanse'] = 'Fv'
     f['overlapp'] = '591(5277<4)'
     f['inkluder'] = 'lokasjon,egenskaper,relasjoner'
+    del f['trafikantgruppe']
 
     obj = FeatureTypeDownloader(581, "prod", **f)
     obj.download()

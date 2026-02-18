@@ -7,6 +7,7 @@ def main():
     f = fagdatafilter()
     f['vegsystemreferanse'] = 'Fv'
     f['inkluder'] = 'lokasjon,egenskaper,relasjoner'
+    del f['trafikantgruppe']
 
     obj = FeatureTypeDownloader(581, "prod", **f)
     obj.download()
