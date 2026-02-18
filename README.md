@@ -135,6 +135,7 @@ Her finner vi antall og lengde langs fylkesveg av objekttypen _Bru (60)_ som har
 ### Kostra 20 Midtrekkverk på to og trefelts fylkesveger
 
 Objekttypen _Rekkverk (5)_ med egenskapen _Bruksområde = Midtrekkverk_ eller _Midtdeler_  langs fylkesveger der vi har to eller tre kjørefelt. Her er analysen simplifisert fra tidligere leveranser. Nå gjør vi en overlappsspørring med objekttypen _Feltstrekning (616)_ med egenskapen _Type = 2-feltsveg envegskjørt, 2-feltsveg, Del av 2-feltsveg, 3-feltsveg envegskjørt, 3-feltsveg_ eller _Del av 3-feltsveg_.
+Ettersom datagrunnlaget for midtrekkverk i NVDB inneholder en god del feil, har det i forbindelse med årets leveranse blitt gjort en jobb med å gå gjennom midtrekkverkene i NVDB og filtrere bort feilklassifiserte midtrekkvert fra rapporten. Eksakt hvilke rekkverk-objekter som er filtrert bort står tydelig i Python-koden.
 
 ### Kostra 21 gang og sykkelveg for fylkesveger
 
