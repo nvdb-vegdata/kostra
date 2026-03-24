@@ -7,6 +7,7 @@ def hent_voll():
     f['vegsystemreferanse'] = 'Fv'
     f['egenskap'] = 'egenskap(1286)=1996'
     f['inkluder'] = 'lokasjon'
+    del f['trafikantgruppe']
 
     obj = FeatureTypeDownloader(234, "prod", **f)
     obj.download()
@@ -18,6 +19,7 @@ def hent_skjerm():
     f['vegsystemreferanse'] = 'Fv'
     f['egenskap'] = 'egenskap(1247)=1994'
     f['inkluder'] = 'lokasjon'
+    del f['trafikantgruppe']
 
     obj = FeatureTypeDownloader(3, "prod", **f)
     obj.download()
@@ -28,8 +30,8 @@ def main():
     skjerm_df, f_skjerm = hent_skjerm()
     voll_df, f_voll = hent_voll()
 
-    skjerm_df.to_excel("src/arb_kostrarapportering_2025/test_rapport24_1.xlsx")
-    voll_df.to_excel("src/arb_kostrarapportering_2025/test_rapport24_2.xlsx")
+    skjerm_df.to_excel("src/arb_kostrarapportering_2025/test_rapport24_1_1.xlsx")
+    voll_df.to_excel("src/arb_kostrarapportering_2025/test_rapport24_2_1.xlsx")
     lengde, antall = tell_antall_og_lengde_per_fylke(skjerm_df)
 
     lengde_df = pd.DataFrame.from_dict(lengde, orient='index', columns=['Lengde [m]'])
