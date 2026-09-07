@@ -19,7 +19,7 @@ def main():
     lengde_df.index.name = 'Fylke'
     lengde_df = lengde_df.reset_index()
 
-    rapportgenerator(lengde_df, f, "Kostra 12 - Fylkesveg ÅDT over 5000", "Fv ÅDT over 5000")
+    rapportgenerator(lengde_df, f, "Kostra 12 - Fylkesveg ÅDT over 4000", "Fv ÅDT over 4000")
 
     print(obj_df.shape)
     print(obj_df.head())
