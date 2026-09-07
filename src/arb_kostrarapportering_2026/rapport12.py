@@ -5,7 +5,7 @@ import pandas as pd
 def main():
     f = fagdatafilter()
     f['vegsystemreferanse'] = 'Fv'
-    f['egenskap'] = 'egenskap(4623)>=5000'
+    f['egenskap'] = 'egenskap(4623)>=4000'
     f['inkluder'] = 'lokasjon'
 
     obj = FeatureTypeDownloader(540, "prod", **f)
