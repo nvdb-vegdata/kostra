@@ -133,7 +133,7 @@ def tell_vegnett_lengde_per_fylke(df):
 def rapportgenerator(df, filter, rapportnavn, arknavn):
     df = df.sort_values(by=['Fylke'])
     #df.to_excel(f'src/arb_kostrarapportering_2025/rapporter/{rapportnavn}.xlsx')
-    writer = pd.ExcelWriter(f'src/arb_kostrarapportering_2026/rapporter/{rapportnavn}.xlsx', engine='openpyxl')
+    #writer = pd.ExcelWriter(f'src/arb_kostrarapportering_2026/rapporter/{rapportnavn}.xlsx', engine='openpyxl')
     writer = pd.ExcelWriter(f'rapporter_2026/{rapportnavn}.xlsx', engine='openpyxl')
     df.to_excel(writer, sheet_name=arknavn, index=False)
 
@@ -148,7 +148,7 @@ def rapportgenerator_24(df, df2, filter1, filter2, rapportnavn, arknavn, arknavn
     df = df.sort_values(by=['Fylke'])
     df2 = df2.sort_values(by=['Fylke'])
     #df.to_excel(f'src/arb_kostrarapportering_2025/rapporter/{rapportnavn}.xlsx')
-    writer = pd.ExcelWriter(f'src/arb_kostrarapportering_2025/rapporter/{rapportnavn}.xlsx', engine='openpyxl')
+    writer = pd.ExcelWriter(f'rapporter_2026/{rapportnavn}.xlsx', engine='openpyxl')
     df.to_excel(writer, sheet_name=arknavn, index=False)
     df2.to_excel(writer, sheet_name=arknavn2, index=False)
 
