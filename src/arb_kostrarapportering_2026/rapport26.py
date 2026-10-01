@@ -22,7 +22,8 @@ def main():
     #obj_df.to_excel("test_rapport26.xlsx")
     lengde = tell_lengde_per_fylke(obj_df)
 
-    lengde_df = pd.DataFrame.from_dict(lengde, orient='index', columns=['Lengde [m]'])
+    lengde_df = pd.DataFrame.from_dict(lengde, orient='index', columns=['Lengde [km]'])
+    lengde_df['Lengde [km]'] = lengde_df['Lengde [km]'].apply(lambda x: round(x/1000))
     lengde_df.index.name = 'Fylke'
     lengde_df = lengde_df.reset_index()
 

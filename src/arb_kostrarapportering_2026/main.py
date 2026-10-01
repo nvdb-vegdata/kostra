@@ -38,7 +38,7 @@ def vegnettsfilter():
 
 #Endret til 2026 for kjøring av rapport 12
 def fagdatafilter():
-    return {'trafikantgruppe':'K', 'tidspunkt':'2026-12-31'}
+    return {'trafikantgruppe':'K', 'tidspunkt':'2025-12-31'}
 
 def tell_lengde_per_vegsystem(df):
     lengder = {}
